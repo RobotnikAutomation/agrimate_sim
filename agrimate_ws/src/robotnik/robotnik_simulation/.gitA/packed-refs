@@ -1,7 +1,0 @@
-# pack-refs with: peeled fully-peeled sorted 
-c6840a216c75fccd802299cb4c99ab8b6b8874c6 refs/remotes/origin/fix/jazzy/docker-deploy
-eb535e8f0b48339ded455fca5a56b7419c78ae58 refs/remotes/origin/humble-devel
-8378c89d22e69367991b1830e668ff159875fc35 refs/remotes/origin/jazzy-devel
-05992a379119ad2b9c9d048fc8e454626eeba991 refs/remotes/origin/old/container-releases
-a987b836ec5e300750b139cfef6a4c73278b3ccc refs/remotes/origin/old/humble-devel
-32583a1e5c97cab71361e5af9e1427f9ca6322f4 refs/remotes/origin/ros-devel
