@@ -30,3 +30,5 @@ Repository to load the Gazebo simulation of the RB-Fiqus robot for the AGRIMATE 
 - If the build fails, ensure you have sourced the ROS 2 setup (`source /opt/ros/jazzy/setup.bash`) and installed all dependencies.
 - Run the commands from the `agrimate_ws` directory mentioned above.
 - If `colcon build` fails on gz_control, try running it again.
+
+# Don't Work. Dependency error :(
