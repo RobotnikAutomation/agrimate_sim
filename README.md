@@ -21,7 +21,6 @@ Repository to load the Gazebo simulation of the RB-Fiqus robot for the AGRIMATE 
    ```
    source install/setup.bash
    ```
-   (If you use zsh: `source install/setup.zsh`.)
 5. Launch the simulation:
    ```
    ros2 launch robotnik_agrimate simulation.launch.py
