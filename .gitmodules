@@ -1,36 +1,29 @@
 [submodule "agrimate_ws/src/robotnik/robotnik_common"]
-	path = agrimate_ws/src/robotnik/robotnik_common
-	url = https://github.com/RobotnikAutomation/robotnik_common.git
-	branch = jazzy-devel
+    path = agrimate_ws/src/robotnik/robotnik_common
+    url = https://github.com/RobotnikAutomation/robotnik_common.git
+    branch = jazzy-devel
+
 [submodule "agrimate_ws/src/robotnik/robotnik_interfaces"]
-	path = agrimate_ws/src/robotnik/robotnik_interfaces
-	url = https://github.com/RobotnikAutomation/robotnik_common.git
-	branch = jazzy-devel
+    path = agrimate_ws/src/robotnik/robotnik_interfaces
+    url = https://github.com/RobotnikAutomation/robotnik_interfaces.git
+    branch = jazzy-devel
+
 [submodule "agrimate_ws/src/robotnik/robotnik_sensors"]
-	path = agrimate_ws/src/robotnik/robotnik_sensors
-	url = https://github.com/RobotnikAutomation/robotnik_common.git
-	branch = jazzy-devel
-[submodule "src/robotnik_common"]
-	path = src/robotnik_common
-	url = https://github.com/RobotnikAutomation/robotnik_common.git
-	branch = jazzy-devel
-[submodule "robotnik_ws/src/robotnik/robotnik_common"]
-	path = robotnik_ws/src/robotnik/robotnik_common
-	url = https://github.com/RobotnikAutomation/robotnik_common.git
-	branch = jazzy-devel
-[submodule "src/Universal_Robots_ROS2_Description"]
-	path = src/Universal_Robots_ROS2_Description
-	url = https://github.com/RobotnikAutomation/Universal_Robots_ROS2_Description.git
-	branch = fix/gazebo-control-jazzy
+    path = agrimate_ws/src/robotnik/robotnik_sensors
+    url = https://github.com/RobotnikAutomation/robotnik_sensors.git
+    branch = jazzy-devel
+
 [submodule "agrimate_ws/src/Universal_Robots_ROS2_Description"]
-	path = agrimate_ws/src/Universal_Robots_ROS2_Description
-	url = https://github.com/RobotnikAutomation/Universal_Robots_ROS2_Description.git
-	branch = fix/gazebo-control-jazzy
+    path = agrimate_ws/src/Universal_Robots_ROS2_Description
+    url = https://github.com/RobotnikAutomation/Universal_Robots_ROS2_Description.git
+    branch = fix/gazebo-control-jazzy
+
 [submodule "agrimate_ws/src/ros-control/gz_ros2_control"]
-	path = agrimate_ws/src/ros-control/gz_ros2_control
-	url = https://github.com/ros-controls/gz_ros2_control/tree/jazzy
-	branch = jazzy
+    path = agrimate_ws/src/ros-control/gz_ros2_control
+    url = https://github.com/ros-controls/gz_ros2_control.git
+    branch = jazzy
+
 [submodule "agrimate_ws/src/ros-visualization/visualization_tutorials"]
-	path = agrimate_ws/src/ros-visualization/visualization_tutorials
-	url = https://github.com/ros-visualization/visualization_tutorials/tree/jazzy
-	branch = jazzy
+    path = agrimate_ws/src/ros-visualization/visualization_tutorials
+    url = https://github.com/ros-visualization/visualization_tutorials.git
+    branch = jazzy
