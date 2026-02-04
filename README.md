@@ -4,8 +4,13 @@ Repository to load the Gazebo simulation of the RB-Fiqus robot for the AGRIMATE 
 
 ## Requirements
 - ROS 2 installed and configured.
-- Gazebo (if the simulation requires it).
+- Gazebo Ignition.
 - Workspace dependencies installed.
+
+Installation:
+```
+git clone --recursive https://github.com/RobotnikAutomation/agrimate_sim.git
+```
 
 ## Steps to run the simulation (all inside `agrimate_ws`, which is under `agrimate_sim`)
 1. Open a terminal.
