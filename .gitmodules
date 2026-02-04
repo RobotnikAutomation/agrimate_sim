@@ -13,6 +13,16 @@
     url = https://github.com/RobotnikAutomation/robotnik_sensors.git
     branch = jazzy-devel
 
+[submodule "agrimate_ws/src/robotnik/robotnik_description"]
+	path = agrimate_ws/src/robotnik/robotnik_description
+	url = https://github.com/RobotnikAutomation/robotnik_description.git
+	branch = robot/rbfiqus_agrimate
+
+[submodule "agrimate_ws/src/robotnik/robotnik_simulation"]
+	path = agrimate_ws/src/robotnik/robotnik_simulation
+	url = https://github.com/RobotnikAutomation/robotnik_simulation.git
+	branch = robot/rbfiqus_agrimate
+
 [submodule "agrimate_ws/src/Universal_Robots_ROS2_Description"]
     path = agrimate_ws/src/Universal_Robots_ROS2_Description
     url = https://github.com/RobotnikAutomation/Universal_Robots_ROS2_Description.git
