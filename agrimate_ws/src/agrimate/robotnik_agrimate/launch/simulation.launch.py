@@ -50,7 +50,7 @@ def generate_launch_description():
             'robot': 'rbfiqus',
             'robot_model': 'rbfiqus_agrimate',
             'use_sim_time': 'true',
-            'x': '1.0',
+            'x': '4.0',
             'y': '0.0',
             'z': '0.6',
         }.items(),
