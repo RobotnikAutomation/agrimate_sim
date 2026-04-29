@@ -47,7 +47,7 @@ def generate_launch_description():
             ])
         ),
         launch_arguments={
-            'robot': 'rbfiqus',
+            'robot': 'rbfiqus_agrimate',
             'robot_model': 'rbfiqus_agrimate',
             'use_sim_time': 'true',
             'x': '4.0',
@@ -69,4 +69,3 @@ def generate_launch_description():
     ])
 
     return LaunchDescription(declared_arguments + [group])
-
