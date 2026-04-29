@@ -23,6 +23,11 @@
 	url = https://github.com/jlgalanRB/robotnik_simulation.git
 	branch = robot/rbfiqus_agrimate
 
+[submodule "agrimate_ws/src/robotnik/robotnik_controllers"]
+	path = agrimate_ws/src/robotnik/robotnik_controllers
+	url = https://github.com/jlgalanRB/robotnik_controllers.git
+	branch = robot/rbfiqus_agrimate
+
 [submodule "agrimate_ws/src/Universal_Robots_ROS2_Description"]
     path = agrimate_ws/src/Universal_Robots_ROS2_Description
     url = https://github.com/RobotnikAutomation/Universal_Robots_ROS2_Description.git
@@ -37,3 +42,8 @@
     path = agrimate_ws/src/ros-visualization/visualization_tutorials
     url = https://github.com/ros-visualization/visualization_tutorials.git
     branch = jazzy
+
+[submodule "agrimate_ws/src/grid_map"]
+	path = agrimate_ws/src/grid_map
+	url = https://github.com/ANYbotics/grid_map.git
+	branch = jazzy
