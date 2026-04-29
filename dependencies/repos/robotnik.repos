@@ -1,0 +1,5 @@
+repositories:
+  robotnik/robotnik_controllers:
+    type: git
+    url: git@github.com:jlgalanRB/robotnik_controllers.git
+    version: robot/rbfiqus_agrimate
