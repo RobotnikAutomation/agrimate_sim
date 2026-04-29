@@ -1,7 +1,7 @@
-# Blender 4.5.4 LTS MTL File: 'model.blend'
+# Blender 5.1.1 MTL File: 'model.blend'
 # www.blender.org
 
-newmtl 1_tree
+newmtl 1_tree.001
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.065226 0.043711 0.023383
