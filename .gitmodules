@@ -15,12 +15,12 @@
 
 [submodule "agrimate_ws/src/robotnik/robotnik_description"]
 	path = agrimate_ws/src/robotnik/robotnik_description
-	url = https://github.com/RobotnikAutomation/robotnik_description.git
+	url = https://github.com/jlgalanRB/robotnik_description.git
 	branch = robot/rbfiqus_agrimate
 
 [submodule "agrimate_ws/src/robotnik/robotnik_simulation"]
 	path = agrimate_ws/src/robotnik/robotnik_simulation
-	url = https://github.com/RobotnikAutomation/robotnik_simulation.git
+	url = https://github.com/jlgalanRB/robotnik_simulation.git
 	branch = robot/rbfiqus_agrimate
 
 [submodule "agrimate_ws/src/Universal_Robots_ROS2_Description"]
