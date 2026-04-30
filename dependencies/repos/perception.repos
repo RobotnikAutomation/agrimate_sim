@@ -1,0 +1,10 @@
+repositories:
+  robotnik/robotnik_row_extraction:
+    type: git
+    url: https://github.com/RobotnikAutomation/robotnik_row_extraction.git
+    version: jazzy-devel
+
+  grid_map:
+    type: git
+    url: https://github.com/ANYbotics/grid_map.git
+    version: jazzy
