@@ -2,3 +2,4 @@ agrimate_ws/build/
 agrimate_ws/install/
 agrimate_ws/log/
 agrimate_ws/src/robotnik/robotnik_controllers/
+agrimate_ws/src/grid_map/
