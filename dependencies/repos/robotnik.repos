@@ -3,3 +3,8 @@ repositories:
     type: git
     url: https://github.com/jlgalanRB/robotnik_controllers.git
     version: robot/rbfiqus_agrimate
+  
+  agrimate:
+    type: git
+    url: https://github.com/jlgalanRB/robotnik_agrimate_perception.git
+    version: fix/add_sim
