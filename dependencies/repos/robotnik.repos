@@ -8,3 +8,9 @@ repositories:
     type: git
     url: https://github.com/jlgalanRB/robotnik_agrimate_perception.git
     version: fix/add_sim
+
+  agrimate/robotnik_agrimate_navigation:
+    type: git
+    url: https://github.com/jlgalanRB/robotnik_agrimate_navigation.git
+    version: fix/add_sim
+    
