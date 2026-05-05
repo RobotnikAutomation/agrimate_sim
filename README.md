@@ -46,16 +46,6 @@ git config --global --unset url.git@github.com:.insteadOf
 git clone https://github.com/RobotnikAutomation/agrimate_sim.git
 ```
 
-## Private Robotnik Stack
-
-If you have access to the private Robotnik AgriMate stack under development,
-import it into the workspace with:
-
-```bash
-cd agrimate_sim
-vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
-```
-
 ## Robotnik Controllers Debian Package
 
 This repository also includes the packaged `robotnik_controllers` binary needed
@@ -89,6 +79,16 @@ To inspect the available launch arguments:
 
 ```bash
 ros2 launch agrimate_simulation simulation.launch.py --show-args
+```
+
+## Private Robotnik Stack
+
+If you have access to the private Robotnik AgriMate stack under development,
+import it into the workspace with:
+
+```bash
+cd agrimate_sim
+vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
 ```
 
 ## Notes
