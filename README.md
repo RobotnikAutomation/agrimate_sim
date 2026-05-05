@@ -1,62 +1,80 @@
 # agrimate_sim
 
-Repository to load the Gazebo simulation of the RB-Fiqus robot for the AGRIMATE project.
+Workspace repository for the Gazebo simulation of the RB-Fiqus AgriMate robot.
+The base simulation package lives under
+`agrimate_ws/src/agrimate/agrimate_simulation`.
+
+The Robotnik private stack under development is intentionally external to this
+repository. If you have access to it, install it through
+`dependencies/repos/robotnik.repos` as the multi-package repository
+`agrimate/robotnik_agrimate`.
+
+## What This Repository Provides
+
+- `agrimate_simulation`: Gazebo world, simulation assets, resource hooks, and
+  the base launch file for spawning the robot in simulation.
+- A workspace layout that can run the simulation on its own.
+- A `robotnik.repos` file for importing the private Robotnik stack when access
+  is available.
 
 ## Requirements
-- ROS 2 installed and configured.
-- Gazebo Ignition.
-- Workspace dependencies installed.
 
-Installation:
-```
-git clone --recursive https://github.com/RobotnikAutomation/agrimate_sim.git
-```
+- ROS 2 Jazzy installed and configured.
+- Gazebo Ignition environment available through ROS 2.
+- Workspace dependencies installed with `rosdep`.
 
-## Optional Private Dependencies
-
-Some Robotnik packages used by the full AgriMate stack are private and are not
-included as submodules. Users with access can import them with:
-
-```bash
-vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
-```
-
-The `.repos` files use HTTPS URLs by default. Users who prefer SSH can configure
-Git to rewrite GitHub HTTPS URLs to SSH:
+The repos files use HTTPS URLs by default. If you prefer SSH, you can
+rewrite GitHub HTTPS URLs globally:
 
 ```bash
 git config --global url."git@github.com:".insteadOf "https://github.com/"
 ```
 
-After this configuration, `vcs import` can keep using the same `.repos` files,
-while Git will access GitHub repositories through SSH internally.
-
-To remove this global rewrite:
+To remove that rewrite later:
 
 ```bash
 git config --global --unset url.git@github.com:.insteadOf
 ```
 
-## Steps to run the simulation (all inside `agrimate_ws`, which is under `agrimate_sim`)
-1. Open a terminal.
-2. Go to the workspace:
-   ```
-   cd agrimate_sim/agrimate_ws
-   ```
-3. Build the workspace:
-   ```
-   colcon build
-   ```
-4. Source the workspace packages into the current environment:
-   ```
-   source install/setup.bash
-   ```
-5. Launch the simulation:
-   ```
-   ros2 launch robotnik_agrimate simulation.launch.py
-   ```
+## Clone
+
+```bash
+git clone https://github.com/RobotnikAutomation/agrimate_sim.git
+```
+
+## Private Robotnik Stack
+
+If you have access to the private Robotnik AgriMate stack under development,
+import it into the workspace with:
+
+```bash
+cd agrimate_sim
+vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
+```
+
+## Build And Run Base Simulation
+
+All commands below are executed from `agrimate_ws`:
+
+```bash
+cd agrimate_sim/agrimate_ws
+rosdep install --from-paths src --ignore-src -r -y
+colcon build --packages-up-to agrimate_simulation
+source install/setup.bash
+ros2 launch agrimate_simulation simulation.launch.py
+```
+
+To inspect the available launch arguments:
+
+```bash
+ros2 launch agrimate_simulation simulation.launch.py --show-args
+```
 
 ## Notes
-- If the build fails, ensure you have sourced the ROS 2 setup (`source /opt/ros/jazzy/setup.bash`) and installed all dependencies.
-- Run the commands from the `agrimate_ws` directory mentioned above.
-- If `colcon build` fails on gz_control, try running it again.
+
+- The base simulation remains usable without the private `robotnik_agrimate`
+  stack.
+- If the build fails, ensure `source /opt/ros/jazzy/setup.bash` has been run in
+  the current shell.
+- If `colcon build` fails on `gz_ros2_control`, rerun the build once before
+  investigating further.

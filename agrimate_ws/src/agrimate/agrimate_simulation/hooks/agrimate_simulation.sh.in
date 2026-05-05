@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # This hook adds robotnik gazebo resources to the appropriate environment variables
-_GZ_PKGS=${GZ_RESOURCE_PKGS:-"robotnik_agrimate"}
+_GZ_PKGS=${GZ_RESOURCE_PKGS:-"agrimate_simulation"}
 
 
 _prepend_unique_value() {
