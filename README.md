@@ -21,6 +21,7 @@ repository. If you have access to it, install it through
 
 - ROS 2 Jazzy installed and configured.
 - Gazebo Ignition environment available through ROS 2.
+- The robotnik_simulation instalation guide completed.
 - Workspace dependencies installed with `rosdep`.
 - The specific `robotnik_controllers` package for RB-Fiqus Ackermann available
   through the packaged Debian artifact included in this repository. The
@@ -62,6 +63,39 @@ debs/ros-jazzy-robotnik-controllers_1.3.0-20260505.113947-639e4c7_amd64.deb
 
 Install this package before building the workspace. Do not rely on the
 conventional `robotnik_controllers` package from `simulation` for this setup.
+
+## Commands to find, uninstall, and install the .deb package
+
+If you need to check whether the package is installed, remove it, or (re)install the version included in this repository, use the following commands.
+
+- Check if the package is installed (shows name and version):
+
+```bash
+dpkg -l | grep robotnik
+```
+
+- Remove the package if present:
+
+```bash
+sudo dpkg -r ros-jazzy-robotnik-controllers
+sudo apt autoremove -y
+sudo rm -f /var/cache/apt/archives/ros-jazzy-robotnik-controllers*.deb
+```
+
+- Install the correct version included in this repository (from the repo root):
+
+```bash
+cd agrimate_sim
+sudo apt update
+sudo apt install ./debs/ros-jazzy-robotnik-controllers_1.3.0-20260505.113947-639e4c7_amd64.deb
+```
+
+If `apt` fails due to dependencies, use:
+
+```bash
+sudo dpkg -i debs/ros-jazzy-robotnik-controllers_1.3.0-20260505.113947-639e4c7_amd64.deb
+sudo apt -f install -y
+```
 
 ## Temporary GPS Patch
 
