@@ -3,6 +3,12 @@
 This directory can host `.deb` packages for private dependencies when source access is
 not available.
 
-For `robotnik_controllers`, prefer using `dependencies/repos/private.repos` when the
-developer has repository access. Use a `.deb` package only as a binary fallback for the
-matching Ubuntu, ROS 2 and architecture versions.
+The `robotnik_controllers` package stored here is the binary dependency needed for the
+RB-Fiqus Ackermann platform to work correctly in this simulation workspace.
+
+Current package:
+
+```text
+ros-jazzy-robotnik-controllers_1.3.0-20260505.113947-639e4c7_amd64.deb
+```
+
