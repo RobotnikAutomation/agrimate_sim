@@ -17,7 +17,7 @@ def generate_launch_description():
         DeclareLaunchArgument("x", default_value="4.0"),
         DeclareLaunchArgument("y", default_value="0.0"),
         DeclareLaunchArgument("z", default_value="0.6"),
-        DeclareLaunchArgument("run_rviz", default_value="false"),
+        DeclareLaunchArgument("run_rviz", default_value="true"),
         DeclareLaunchArgument("gazebo_gui", default_value="true"),
         DeclareLaunchArgument("rviz_config", default_value=""),
         DeclareLaunchArgument("use_sim_time", default_value="true"),
