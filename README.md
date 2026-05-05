@@ -63,6 +63,29 @@ debs/ros-jazzy-robotnik-controllers_1.3.0-20260505.113947-639e4c7_amd64.deb
 Install this package before building the workspace. Do not rely on the
 conventional `robotnik_controllers` package from `simulation` for this setup.
 
+## Temporary GPS Patch
+
+Until the RTK node is available, apply a temporary patch to
+[gps_plugin.urdf.xacro](/home/jlgalan/repos/agrimate_github_prep/agrimate_sim/agrimate_ws/src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro)
+to reduce the simulated NavSat positioning error.
+
+File to edit:
+
+```text
+agrimate_sim/agrimate_ws/src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
+```
+
+Change these values in `position_sensing`:
+
+```text
+1.75e-6  -> 1.75e-8
+1.35e-6  -> 1.35e-8
+```
+
+This patch is only a workaround to stabilize the GPS behavior while the RTK
+solution is not yet integrated.
+
+
 ## Build And Run Base Simulation
 
 All commands below are executed from `agrimate_ws`:
