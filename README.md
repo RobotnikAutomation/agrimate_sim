@@ -44,7 +44,7 @@ git config --global --unset url.git@github.com:.insteadOf
 ## Clone
 
 ```bash
-git clone https://github.com/RobotnikAutomation/agrimate_sim.git
+git clone --recursive https://github.com/RobotnikAutomation/agrimate_sim.git
 ```
 
 ## Robotnik Controllers Debian Package
