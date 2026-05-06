@@ -127,7 +127,7 @@ All commands below are executed from `agrimate_ws`:
 ```bash
 cd agrimate_sim/agrimate_ws
 rosdep install --from-paths src --ignore-src -r -y
-colcon build --packages-up-to agrimate_simulation
+colcon build --symlink-install
 source install/setup.bash
 ros2 launch agrimate_simulation simulation.launch.py
 ```
