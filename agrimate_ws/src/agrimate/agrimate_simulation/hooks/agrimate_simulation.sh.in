@@ -11,14 +11,14 @@ _prepend_unique_value() {
 }
 
 _get_parent_abs_path() {
-  echo "$(CDPATH= cd -- "$(dirname "$1")" 2>/dev/null && pwd)"
+  echo "$(CDPATH= command cd -- "$(dirname "$1")" 2>/dev/null && pwd)"
 }
 
 if [ -n "$AMENT_CURRENT_PREFIX" ]; then
   _self_prefix="$AMENT_CURRENT_PREFIX"
 else
-  _hook_dir="$(CDPATH= cd -- "$(dirname "$0")" 2>/dev/null && pwd)"
-  _self_prefix="$(CDPATH= cd -- "$_hook_dir/../../.." 2>/dev/null && pwd)"
+  _hook_dir="$(CDPATH= command cd -- "$(dirname "$0")" 2>/dev/null && pwd)"
+  _self_prefix="$(CDPATH= command cd -- "$_hook_dir/../../.." 2>/dev/null && pwd)"
 fi
 
 _prefixes="$AMENT_PREFIX_PATH"
