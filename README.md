@@ -99,25 +99,47 @@ sudo apt -f install -y
 
 ## Temporary GPS Patch
 
-Until the RTK node is available, apply a temporary patch to
-[gps_plugin.urdf.xacro](/home/jlgalan/repos/agrimate_github_prep/agrimate_sim/agrimate_ws/src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro)
-to reduce the simulated NavSat positioning error.
+Until the RTK node is available, apply a temporary patch to the GPS plugin
+Xacro file to reduce the simulated NavSat positioning error.
 
-File to edit:
+From the repository root, run the following commands step by step:
 
-```text
-agrimate_sim/agrimate_ws/src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
+```bash
+cd ~/agrimate_sim/agrimate_ws
+
+# Check that the GPS plugin file exists
+ls src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
+
+# Show the relevant section to verify the current values
+grep -n "position_sensing\|1.75e-6\|1.35e-6" src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
 ```
 
-Change these values in `position_sensing`:
+Then edit the file with your preferred editor:
 
-```text
-1.75e-6  -> 1.75e-8
-1.35e-6  -> 1.35e-8
+```bash
+nano src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
 ```
 
-This patch is only a workaround to stabilize the GPS behavior while the RTK
-solution is not yet integrated.
+Inside the file, find the `position_sensing` section and replace the two values:
+
+- `1.75e-6` -> `1.75e-8`
+- `1.35e-6` -> `1.35e-8`
+
+If you prefer to apply the change directly from the shell, use:
+
+```bash
+sed -i 's/1.75e-6/1.75e-8/' src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
+sed -i 's/1.35e-6/1.35e-8/' src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
+```
+
+Finally, verify the update:
+
+```bash
+grep -n "1.75e-8\|1.35e-8" src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
+```
+
+This patch is a temporary workaround to stabilize the GPS behavior while the
+RTK solution is not yet integrated.
 
 
 ## Build And Run Base Simulation
@@ -125,10 +147,20 @@ solution is not yet integrated.
 All commands below are executed from `agrimate_ws`:
 
 ```bash
-cd agrimate_sim/agrimate_ws
+cd ~/agrimate_sim/agrimate_ws
+
+# Install system and ROS dependencies from the workspace root
+rosdep update
 rosdep install --from-paths src --ignore-src -r -y
+
+# Compile the workspace
 colcon build --symlink-install
 source install/setup.bash
+```
+
+Launch the simulation:
+
+```bash
 ros2 launch agrimate_simulation simulation.launch.py
 ```
 
@@ -144,7 +176,7 @@ If you have access to the private Robotnik AgriMate stack under development,
 import it into the workspace with:
 
 ```bash
-cd agrimate_sim
+cd ~/agrimate_sim
 vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
 ```
 
@@ -156,3 +188,7 @@ vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
   the current shell.
 - If `colcon build` fails on `gz_ros2_control`, rerun the build once before
   investigating further.
+- Puede haber problemas con los hooks. Para los comandos del tipo
+  `CDPATH= command cd`, es necesario poner `command` delante para que se
+  resuelvan correctamente las rutas. Consulta el hook en
+  [`agrimate_ws/src/agrimate/agrimate_simulation/hooks/agrimate_simulation.sh.in`](agrimate_ws/src/agrimate/agrimate_simulation/hooks/agrimate_simulation.sh.in).

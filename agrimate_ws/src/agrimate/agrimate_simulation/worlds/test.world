@@ -55,7 +55,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>models://template_blender_model/source/model.obj</uri>
+              <uri>model://template_blender_model/source/model.obj</uri>
             </mesh>
           </geometry>
         </visual>
@@ -64,7 +64,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>models://template_blender_model/source/model.obj</uri>
+              <uri>model://template_blender_model/source/model.obj</uri>
             </mesh>
           </geometry>
         </collision>
@@ -72,7 +72,7 @@
       </link>
       <self_collide>false</self_collide>
     </model>
-    
+
     <light name='Sol' type='directional'>
       <pose>0 0 20 0.35 .35 0</pose>
       <cast_shadows>true</cast_shadows>
