@@ -188,7 +188,7 @@ vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
   the current shell.
 - If `colcon build` fails on `gz_ros2_control`, rerun the build once before
   investigating further.
-- Puede haber problemas con los hooks. Para los comandos del tipo
-  `CDPATH= command cd`, es necesario poner `command` delante para que se
-  resuelvan correctamente las rutas. Consulta el hook en
-  [`agrimate_ws/src/agrimate/robotnik_agrimate_simulation/hooks/robotnik_agrimate_simulation.sh.in`](agrimate_ws/src/agrimate/robotnik_agrimate_simulation/hooks/robotnik_agrimate_simulation.sh.in).
+- Gazebo resource hooks can be sensitive to hook ordering. In this workspace,
+  using the package name `robotnik_agrimate_simulation` ensures its hook is
+  sourced after `ament_prefix_path` and the resource paths are populated
+  correctly.

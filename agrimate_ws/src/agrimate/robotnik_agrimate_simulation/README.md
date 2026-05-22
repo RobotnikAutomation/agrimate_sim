@@ -31,4 +31,14 @@ source install/setup.bash
 If Gazebo crashes when importing a Blender-generated model, check whether the
 OBJ export was created with "Selection Only" and no selected object.
 
-![Crash error when importing empty OBJ](./doc/empty_obj_error.png)
+If Gazebo cannot find worlds or models after sourcing the workspace, check the
+generated resource paths first:
+
+```bash
+env | grep -E 'GZ_SIM_RESOURCE_PATH|IGN_GAZEBO_RESOURCE_PATH|GAZEBO_RESOURCE_PATH'
+```
+
+This package uses a Gazebo resource hook. A previous package name
+(`agrimate_simulation`) could make the hook run before `ament_prefix_path`,
+which left the resource variables incomplete. The package was renamed to
+`robotnik_agrimate_simulation` to keep the hook ordering stable.
