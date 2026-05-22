@@ -26,7 +26,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "world_path",
             default_value=PathJoinSubstitution([
-                FindPackageShare('agrimate_simulation'),
+                FindPackageShare('robotnik_agrimate_simulation'),
                 'worlds',
                 'test.world'
             ]),

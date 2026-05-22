@@ -1,4 +1,4 @@
-# agrimate_simulation
+# robotnik_agrimate_simulation
 
 Gazebo simulation package for the AgriMate project. It contains the simulation
 worlds, vineyard models, resource hooks, and base launch file for spawning the
@@ -7,7 +7,7 @@ RB-Fiqus AgriMate robot.
 ## Launch
 
 ```bash
-ros2 launch agrimate_simulation simulation.launch.py
+ros2 launch robotnik_agrimate_simulation simulation.launch.py
 ```
 
 ## Contents
@@ -22,7 +22,7 @@ ros2 launch agrimate_simulation simulation.launch.py
 From the workspace root:
 
 ```bash
-colcon build --packages-select agrimate_simulation
+colcon build --packages-select robotnik_agrimate_simulation
 source install/setup.bash
 ```
 

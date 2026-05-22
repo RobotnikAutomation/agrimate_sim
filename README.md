@@ -2,7 +2,7 @@
 
 Workspace repository for the Gazebo simulation of the RB-Fiqus AgriMate robot.
 The base simulation package lives under
-`agrimate_ws/src/agrimate/agrimate_simulation`.
+`agrimate_ws/src/agrimate/robotnik_agrimate_simulation`.
 
 The Robotnik private stack under development is intentionally external to this
 repository. If you have access to it, install it through
@@ -11,7 +11,7 @@ repository. If you have access to it, install it through
 
 ## What This Repository Provides
 
-- `agrimate_simulation`: Gazebo world, simulation assets, resource hooks, and
+- `robotnik_agrimate_simulation`: Gazebo world, simulation assets, resource hooks, and
   the base launch file for spawning the robot in simulation.
 - A workspace layout that can run the simulation on its own.
 - A `robotnik.repos` file for importing the private Robotnik stack when access
@@ -161,13 +161,13 @@ source install/setup.bash
 Launch the simulation:
 
 ```bash
-ros2 launch agrimate_simulation simulation.launch.py
+ros2 launch robotnik_agrimate_simulation simulation.launch.py
 ```
 
 To inspect the available launch arguments:
 
 ```bash
-ros2 launch agrimate_simulation simulation.launch.py --show-args
+ros2 launch robotnik_agrimate_simulation simulation.launch.py --show-args
 ```
 
 ## Private Robotnik Stack
@@ -191,4 +191,4 @@ vcs import agrimate_ws/src < dependencies/repos/robotnik.repos
 - Puede haber problemas con los hooks. Para los comandos del tipo
   `CDPATH= command cd`, es necesario poner `command` delante para que se
   resuelvan correctamente las rutas. Consulta el hook en
-  [`agrimate_ws/src/agrimate/agrimate_simulation/hooks/agrimate_simulation.sh.in`](agrimate_ws/src/agrimate/agrimate_simulation/hooks/agrimate_simulation.sh.in).
+  [`agrimate_ws/src/agrimate/robotnik_agrimate_simulation/hooks/robotnik_agrimate_simulation.sh.in`](agrimate_ws/src/agrimate/robotnik_agrimate_simulation/hooks/robotnik_agrimate_simulation.sh.in).
