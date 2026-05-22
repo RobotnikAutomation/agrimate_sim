@@ -42,3 +42,6 @@ This package uses a Gazebo resource hook. A previous package name
 (`agrimate_simulation`) could make the hook run before `ament_prefix_path`,
 which left the resource variables incomplete. The package was renamed to
 `robotnik_agrimate_simulation` to keep the hook ordering stable.
+
+For the full analysis and root cause, see
+[doc/gazebo_resource_hook_bug_report.md](./doc/gazebo_resource_hook_bug_report.md).
