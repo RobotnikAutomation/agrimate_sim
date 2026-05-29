@@ -97,51 +97,6 @@ sudo dpkg -i debs/ros-jazzy-robotnik-controllers_1.3.0-20260505.113947-639e4c7_a
 sudo apt -f install -y
 ```
 
-## Temporary GPS Patch
-
-Until the RTK node is available, apply a temporary patch to the GPS plugin
-Xacro file to reduce the simulated NavSat positioning error.
-
-From the repository root, run the following commands step by step:
-
-```bash
-cd ~/agrimate_sim/agrimate_ws
-
-# Check that the GPS plugin file exists
-ls src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
-
-# Show the relevant section to verify the current values
-grep -n "position_sensing\|1.75e-6\|1.35e-6" src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
-```
-
-Then edit the file with your preferred editor:
-
-```bash
-nano src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
-```
-
-Inside the file, find the `position_sensing` section and replace the two values:
-
-- `1.75e-6` -> `1.75e-8`
-- `1.35e-6` -> `1.35e-8`
-
-If you prefer to apply the change directly from the shell, use:
-
-```bash
-sed -i 's/1.75e-6/1.75e-8/' src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
-sed -i 's/1.35e-6/1.35e-8/' src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
-```
-
-Finally, verify the update:
-
-```bash
-grep -n "1.75e-8\|1.35e-8" src/robotnik/robotnik_sensors/robotnik_sensors/urdf/gps/gps_plugin.urdf.xacro
-```
-
-This patch is a temporary workaround to stabilize the GPS behavior while the
-RTK solution is not yet integrated.
-
-
 ## Build And Run Base Simulation
 
 All commands below are executed from `agrimate_ws`:
